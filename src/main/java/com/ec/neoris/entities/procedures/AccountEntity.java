@@ -1,4 +1,4 @@
-package com.ec.neoris.entities.procedures;
+package com.ec.test.entities.procedures;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +24,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "account", schema = "neoris_schema")
+@Table(name = "account", schema = "test_schema")
 public class AccountEntity {
 
     @Id

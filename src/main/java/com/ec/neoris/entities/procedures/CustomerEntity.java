@@ -1,4 +1,4 @@
-package com.ec.neoris.entities.procedures;
+package com.ec.test.entities.procedures;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "customer", schema = "neoris_schema")
+@Table(name = "customer", schema = "test_schema")
 public class CustomerEntity extends PersonEntity implements Serializable{
 
     @Id

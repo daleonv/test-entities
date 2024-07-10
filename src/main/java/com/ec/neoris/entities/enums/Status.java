@@ -1,4 +1,4 @@
-package com.ec.neoris.entities.enums;
+package com.ec.test.entities.enums;
 
 /**
  * Enums for status
