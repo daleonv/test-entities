@@ -3,11 +3,11 @@
 ## Build
 
 ```bash
-./gradlew clean build -x test
+gradle clean build
 ```
 
 ## Publis
 
 ```bash
-./gradlew publish
+gradle publish
 ```
