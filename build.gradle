@@ -1,0 +1,41 @@
+buildscript {
+	apply from: "../neoris-gradle/repositories.gradle"
+
+	repositories repos
+
+	apply from: "../neoris-gradle/plugins.gradle"
+
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootPluginVersion}"
+		classpath "io.spring.gradle:dependency-management-plugin:${dependenciesManagementPluginVersion}"
+	}
+}
+
+apply from: "../neoris-gradle/projects.gradle"
+apply from: "../neoris-gradle/versions.gradle"
+apply from: "../neoris-gradle/repositories.gradle"
+
+repositories repos
+
+dependencies {
+	implementation "org.projectlombok:lombok:${lombokVersion}"
+
+	implementation "javax.persistence:javax.persistence-api:${javaxPersistenceApiVersion}"
+	compileOnly "javax.annotation:javax.annotation-api:${javaxAnnotationApiVersion}"
+
+	implementation "org.springframework.data:spring-data-commons:${springDataJPAVersion}"
+	implementation"com.querydsl:querydsl-jpa:${querydslVersion}"
+	compileOnly "com.querydsl:querydsl-core:${querydslVersion}"
+
+	annotationProcessor(
+			"com.querydsl:querydsl-apt:${querydslVersion}:general",
+			"com.querydsl:querydsl-apt:${querydslVersion}:jpa",
+			"javax.persistence:javax.persistence-api:${javaxPersistenceApiVersion}",
+			"javax.annotation:javax.annotation-api:${javaxAnnotationApiVersion}",
+			"org.projectlombok:lombok:${lombokVersion}"
+	)
+
+}
+
+group = 'com.ec.neoris.entities'
+version = '0.0.1-SNAPSHOT'
